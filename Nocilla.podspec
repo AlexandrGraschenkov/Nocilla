@@ -2,12 +2,12 @@ Pod::Spec.new do |s|
   s.name         = "Nocilla"
   s.version      = "0.8.1"
   s.summary      = "Stunning HTTP stubbing for iOS. Testing HTTP requests has never been easier."
-  s.homepage     = "https://github.com/luisobo/Nocilla"
+  s.homepage     = "https://github.com/Sk0rpion/Nocilla"
 
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { "Luis Solano" => "contact@luissolano.com" }
 
-  s.source       = { :git => "https://github.com/luisobo/Nocilla.git", :tag => "0.8.1" }
+  s.source       = { :git => "https://github.com/Sk0rpion/Nocilla.git", :tag => "0.8.1" }
 
   s.ios.deployment_target = '4.0'
   s.osx.deployment_target = '10.7'
