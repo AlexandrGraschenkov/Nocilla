@@ -11,7 +11,19 @@
 @implementation LSHTTPStubURLProtocol
 
 + (BOOL)canInitWithRequest:(NSURLRequest *)request {
-    return [@[ @"http", @"https" ] containsObject:request.URL.scheme];
+    if( ![@[ @"http", @"https" ] containsObject:request.URL.scheme] )
+        return NO;
+    
+    if([LSNocilla sharedInstance].catchAllRequests)
+        return YES;
+    
+    BOOL result = NO;
+    @try {
+        result = nil != [[LSNocilla sharedInstance] responseForRequest:request];
+    }
+    @catch (NSException *exception) { /* sometimes we don't need catch exeptions */ }
+    
+    return result;
 }
 
 + (NSURLRequest *)canonicalRequestForRequest:(NSURLRequest *)request {

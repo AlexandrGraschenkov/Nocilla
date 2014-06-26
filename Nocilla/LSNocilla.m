@@ -32,6 +32,7 @@ static LSNocilla *sharedInstace = nil;
 - (id)init {
     self = [super init];
     if (self) {
+        _catchAllRequests = YES;
         _mutableRequests = [NSMutableArray array];
         _hooks = [NSMutableArray array];
         [self registerHook:[[LSNSURLHook alloc] init]];
