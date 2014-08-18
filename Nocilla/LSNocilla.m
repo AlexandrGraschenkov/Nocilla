@@ -44,6 +44,12 @@ static LSNocilla *sharedInstace = nil;
     return self;
 }
 
+- (void)setResponceMinDelay:(double)minDelay maxDelay:(double)maxDelay
+{
+    _minResponceDelay = minDelay;
+    _maxResponceDelay = MAX(_minResponceDelay, maxDelay);
+}
+
 - (NSArray *)stubbedRequests {
     return [NSArray arrayWithArray:self.mutableRequests];
 }

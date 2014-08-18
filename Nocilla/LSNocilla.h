@@ -13,7 +13,10 @@ extern NSString * const LSUnexpectedRequest;
 
 @property (nonatomic, strong, readonly) NSArray *stubbedRequests;
 @property (nonatomic, assign) BOOL catchAllRequests; // default YES
+@property (nonatomic, readonly) double maxResponceDelay;
+@property (nonatomic, readonly) double minResponceDelay;
 
+- (void)setResponceMinDelay:(double)minDelay maxDelay:(double)maxDelay;
 - (void)start;
 - (void)stop;
 - (void)addStubbedRequest:(LSStubRequest *)request;
